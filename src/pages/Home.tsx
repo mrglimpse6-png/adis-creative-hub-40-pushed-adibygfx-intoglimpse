@@ -7,7 +7,6 @@ import { LeadMagnet } from "@/components/lead-magnet"
 import { PricingEstimator } from "@/components/pricing-estimator"
 import { CalendlyBooking } from "@/components/calendly-booking"
 import { SEOHead } from "@/components/seo-head"
-import { AdminServicePanel } from "@/components/admin-service-panel"
 
 export default function Home() {
   return (
@@ -54,9 +53,6 @@ export default function Home() {
           <CalendlyBooking variant="inline" />
         </div>
       </section>
-      
-      {/* Admin Service Panel */}
-      <AdminServicePanel />
     </main>
     </>
   )

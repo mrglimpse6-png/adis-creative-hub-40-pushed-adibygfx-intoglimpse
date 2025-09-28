@@ -1,31 +1,34 @@
-import { Palette, Play, Zap, CircleCheck as CheckCircle } from "lucide-react"
+import { Palette, Play, Zap, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ServiceManagementSlider } from "@/components/service-management-slider"
-import { useServices } from "@/hooks/use-services"
 
-const iconMap: { [key: string]: any } = {
-  "🎨": Palette,
-  "📺": Play,
-  "🎬": Zap,
-  "🚀": Zap
-}
+const services = [
+  {
+    icon: Palette,
+    title: "Logo Design",
+    description: "Professional logos that make your brand unforgettable",
+    features: ["3 Concepts", "Unlimited Revisions", "All File Formats", "Copyright Transfer"],
+    price: "From $149",
+    popular: false
+  },
+  {
+    icon: Play,
+    title: "YouTube Thumbnails",
+    description: "Eye-catching thumbnails that boost your click-through rates",
+    features: ["High CTR Design", "A/B Test Ready", "Mobile Optimized", "24h Delivery"],
+    price: "From $49",
+    popular: true
+  },
+  {
+    icon: Zap,
+    title: "Video Editing",
+    description: "Professional video editing that keeps viewers engaged",
+    features: ["Color Grading", "Motion Graphics", "Sound Design", "Fast Turnaround"],
+    price: "From $299",
+    popular: false
+  }
+]
 
 export function ServicesOverview() {
-  const { services, isLoading } = useServices()
-
-  if (isLoading) {
-    return (
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-youtube-red mx-auto"></div>
-            <p className="text-muted-foreground mt-4">Loading services...</p>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   return (
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +43,9 @@ export function ServicesOverview() {
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" id="services-grid">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => {
-            const Icon = iconMap[service.icon] || Palette
+            const Icon = service.icon
             return (
               <div 
                 key={service.title}
@@ -88,25 +91,6 @@ export function ServicesOverview() {
               </div>
             )
           })}
-        </div>
-
-        {/* Service Management Slider for Admin */}
-        <div className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-2">
-              Manage <span className="text-gradient-youtube">Services</span>
-            </h3>
-            <p className="text-muted-foreground">
-              Add, edit, or remove services with the interactive slider below
-            </p>
-          </div>
-          <ServiceManagementSlider 
-            initialServices={services}
-            onServiceUpdate={(updatedServices) => {
-              // In production, this would sync with the backend
-              console.log('Services updated:', updatedServices)
-            }}
-          />
         </div>
 
         {/* Bottom CTA */}
