@@ -1,4 +1,4 @@
-import { Palette, Play, Zap, CheckCircle } from "lucide-react"
+import { Palette, Play, Zap, CircleCheck as CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ServiceManagementSlider } from "@/components/service-management-slider"
 import { useServices } from "@/hooks/use-services"

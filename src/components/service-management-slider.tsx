@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Plus, Edit, Trash2, Save, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Plus, CreditCard as Edit, Trash2, Save, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
