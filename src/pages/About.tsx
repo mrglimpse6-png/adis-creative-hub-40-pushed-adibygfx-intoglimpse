@@ -57,14 +57,20 @@ export default function About() {
             {/* Video Placeholder */}
             <div className="max-w-2xl mx-auto mb-8">
               <div className="relative aspect-video bg-gradient-subtle rounded-2xl shadow-premium overflow-hidden border border-border">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-youtube rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Play className="h-10 w-10 text-white ml-1" />
-                    </div>
-                    <p className="text-muted-foreground text-sm">Personal Introduction Video</p>
-                    <p className="text-xs text-muted-foreground mt-1">Coming Soon</p>
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/5">
+                  <button 
+                    className="group flex items-center justify-center w-20 h-20 bg-gradient-youtube rounded-full hover:scale-110 transition-all duration-300 hover:shadow-glow"
+                    onClick={() => {
+                      // In production, this would play the actual video
+                      alert("Intro video would play here! 🎬\n\nThis is where your personal introduction video will be embedded.")
+                    }}
+                    aria-label="Play introduction video"
+                  >
+                    <Play className="h-10 w-10 text-white ml-1 group-hover:scale-110 transition-transform" />
+                  </button>
+                </div>
+                <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                  ▶️ Personal Introduction - 3:45
                 </div>
               </div>
             </div>
