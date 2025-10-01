@@ -205,20 +205,6 @@ class PortfolioManager {
     }
     
     /**
-     * Safely decode JSON field
-     * @param string $json_string JSON string to decode
-     * @return array Decoded array or empty array on failure
-     */
-    private function decodeJsonField($json_string) {
-        if (empty($json_string)) {
-            return [];
-        }
-        
-        $decoded = json_decode($json_string, true);
-        return is_array($decoded) ? $decoded : [];
-    }
-    
-    /**
      * Get portfolio statistics
      * @return array Statistics array
      */
@@ -258,6 +244,20 @@ class PortfolioManager {
                 'featured_projects' => 0
             ];
         }
+    }
+    
+    /**
+     * Safely decode JSON field
+     * @param string $json_string JSON string to decode
+     * @return array Decoded array or empty array on failure
+     */
+    private function decodeJsonField($json_string) {
+        if (empty($json_string)) {
+            return [];
+        }
+        
+        $decoded = json_decode($json_string, true);
+        return is_array($decoded) ? $decoded : [];
     }
 }
 ?>
