@@ -371,6 +371,58 @@
   }
 }
 
+/* Ripple effect animation */
+@keyframes ripple {
+  0% {
+    opacity: 0.8;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+/* Sun rays animation for enhanced hover */
+@keyframes sun-rays {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 8px rgba(251,191,36,0.6));
+  }
+  25% {
+    transform: rotate(90deg) scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(251,191,36,0.8));
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    filter: drop-shadow(0 0 8px rgba(251,191,36,0.6));
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(251,191,36,0.8));
+  }
+}
+
+/* Moon glow animation for enhanced hover */
+@keyframes moon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(147,197,253,0.6));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(147,197,253,0.9));
+    transform: scale(1.08);
+  }
+}
+
+/* Gradient radial utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
 /* Enhanced hover effects for theme toggle */
 .theme-toggle-enhanced:hover .sun-icon {
   animation: sun-rays 2s linear infinite;
